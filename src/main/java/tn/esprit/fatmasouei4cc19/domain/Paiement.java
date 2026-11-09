@@ -1,5 +1,6 @@
 package tn.esprit.fatmasouei4cc19.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -32,5 +33,6 @@ public class Paiement {
     private ModePaiement modePaiement;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference("contrat-paiements")
     private Contrat contrat;
 }
